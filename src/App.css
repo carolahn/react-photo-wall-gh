@@ -17,6 +17,7 @@ header {
   align-items: center;
   background-color: darkgrey;
 }
+
 /* 7. Write CSS rules that ensure that no more than 4 photos appear on a row */
 .collage {
   padding-top: 100px;
@@ -28,6 +29,25 @@ header {
   width: 800px;
 }
 .photoContainer > img {
-  width: 23%;
+  width: 25%;
   padding: 1%;
+}
+@media (max-width: 600px) {
+  header {
+    font-size: 15px;
+    height: 40px;
+  }
+  .collage {
+    width: 100%;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .photoContainer {
+    width: 95%;
+  }
+  .photoContainer > img {
+    width: 50%;
+    padding: 1%;
+  }
 }

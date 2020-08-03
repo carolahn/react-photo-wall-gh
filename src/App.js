@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Button from "./components/button";
 
 // This URL can be combined with an photo id to fetch an photo.
 const PHOTO_URL = (photoId) => `https://picsum.photos/id/${photoId}/200/200`;
@@ -66,6 +67,7 @@ class App extends Component {
             ))}
           </div>
         </div>
+        <Button />
       </React.Fragment>
     );
   }
