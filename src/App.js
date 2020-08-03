@@ -10,7 +10,7 @@ const PHOTO_LIST_URL = "https://picsum.photos/list";
 class App extends Component {
   // 1. Declare a state object that will be used to track an array of photos
   state = {
-    photoList: {},
+    photos: [],
   };
 
   // 2. Declare a life cycle method
@@ -34,7 +34,7 @@ class App extends Component {
       })
       .then((resp) =>
         this.setState({
-          photoList: resp,
+          photos: resp,
         })
       )
       .catch((err) => {
@@ -60,9 +60,9 @@ class App extends Component {
            */}
           {photos.map((photo) => (
             <img
-              alt={/* 3. Fill me in with the photo's filename */ ""}
-              key={/* 4. Fill me in with the photo's id */ ""}
-              src={/* 5. Fill me in with the photo's URL */ ""}
+              alt={photo.filename}
+              key={photo.id}
+              src={PHOTO_URL(photo.id)}
             />
           ))}
         </div>
