@@ -32,6 +32,11 @@ header {
   width: 25%;
   padding: 1%;
 }
+button {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}
 @media (max-width: 600px) {
   header {
     font-size: 15px;
@@ -51,3 +56,5 @@ header {
     padding: 1%;
   }
 }
+
+/* colocar botao no rodapé se for mobile */

@@ -7,11 +7,13 @@ const PHOTO_URL = (photoId) => `https://picsum.photos/id/${photoId}/200/200`;
 // This URL can be used to get an array of objects that contain information
 // about various photos.
 const PHOTO_LIST_URL = "https://picsum.photos/list";
+var data;
 
 class App extends Component {
   // 1. Declare a state object that will be used to track an array of photos
   state = {
     photos: [],
+    counter: 0,
   };
 
   // 2. Declare a life cycle method
@@ -27,20 +29,33 @@ class App extends Component {
         return resp.json();
       })
       .then(function (resp) {
-        let data = resp;
+        data = resp;
         console.log(data);
         tenPhotos = data.slice(0, 10);
         console.log(tenPhotos);
         return tenPhotos;
       })
-      .then((resp) =>
+      .then((resp) => {
         this.setState({
           photos: resp,
-        })
-      )
+          counter: this.state.counter + 10,
+        });
+        // console.log(this.state);
+      })
       .catch((err) => {
         console.error(err.message);
       });
+  }
+  handleClick() {
+    // console.log("clicou");
+    // console.log(this.state.counter);
+    let index = this.state.counter;
+    let morePhotos = data.slice(0, this.state.counter + 10);
+
+    this.setState((state, props) => ({
+      photos: morePhotos,
+      counter: state.counter + 10,
+    }));
   }
 
   render() {
@@ -67,7 +82,7 @@ class App extends Component {
             ))}
           </div>
         </div>
-        <Button />
+        <button onClick={this.handleClick.bind(this)}>Show more</button>
       </React.Fragment>
     );
   }
