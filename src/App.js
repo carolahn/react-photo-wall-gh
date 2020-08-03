@@ -47,24 +47,24 @@ class App extends Component {
     return (
       <React.Fragment>
         <header>
-          <h1>Photo Wall</h1>
-          <p>
-            Start by reading App.jsx and completing the numbered steps.
-            Afterward, delete this paragraph. Then, open up App.css and complete
-            the instructions there.
-          </p>
+          <h1>
+            <span style={{ color: "deeppink" }}>Photo</span>{" "}
+            <span style={{ color: "green" }}>Wall</span>
+          </h1>
         </header>
         <div className="collage">
           {/* We use map here because Array.prototype.map is an expression,
            * and for loops are not. You'll learn more about this soon!
            */}
-          {photos.map((photo) => (
-            <img
-              alt={photo.filename}
-              key={photo.id}
-              src={PHOTO_URL(photo.id)}
-            />
-          ))}
+          <div className="photoContainer">
+            {photos.map((photo) => (
+              <img
+                alt={photo.filename}
+                key={photo.id}
+                src={PHOTO_URL(photo.id)}
+              />
+            ))}
+          </div>
         </div>
       </React.Fragment>
     );
