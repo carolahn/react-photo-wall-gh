@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import Button from "./components/button";
 
 // This URL can be combined with an photo id to fetch an photo.
 const PHOTO_URL = (photoId) => `https://picsum.photos/id/${photoId}/200/200`;
@@ -30,9 +29,9 @@ class App extends Component {
       })
       .then(function (resp) {
         data = resp;
-        console.log(data);
+        // console.log(data);
         tenPhotos = data.slice(0, 10);
-        console.log(tenPhotos);
+        // console.log(tenPhotos);
         return tenPhotos;
       })
       .then((resp) => {
@@ -64,8 +63,8 @@ class App extends Component {
       <React.Fragment>
         <header>
           <h1>
-            <span style={{ color: "deeppink" }}>Photo</span>{" "}
-            <span style={{ color: "green" }}>Wall</span>
+            <span style={{ color: "cornflowerblue" }}>Photo</span>{" "}
+            <span style={{ color: "darkslategrey" }}>Wall</span>
           </h1>
         </header>
         <div className="collage">
