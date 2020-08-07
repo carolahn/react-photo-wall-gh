@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import logoAhn from "./assets/images/logo-flat-02.png";
 
 // This URL can be combined with an photo id to fetch an photo.
 const PHOTO_URL = (photoId) => `https://picsum.photos/id/${photoId}/200/200`;
@@ -82,6 +83,13 @@ class App extends Component {
           </div>
         </div>
         <button onClick={this.handleClick.bind(this)}>Show more</button>
+        <a
+          className="linkLogo"
+          href="https://www.linkedin.com/in/carolina-ahn-35ab7473"
+          target="_blank"
+        >
+          <img border="0" alt="logo" src={logoAhn} />
+        </a>
       </React.Fragment>
     );
   }
